@@ -4,6 +4,7 @@ import UserContext from '../UserContext'
 const Login = () => {
 
     const { userInfo, setUserInfo } = useContext(UserContext)
+    // let date = new Date()
 
     const handleChange = event => {
         setUserInfo({ ...userInfo, [event.target.id]: event.target.value })
@@ -11,8 +12,11 @@ const Login = () => {
     
       const handleSubmit = event => {
         event.preventDefault()
+        setUserInfo({
+            ...userInfo,
+            // lastLogin: `${date}`
+        })
         console.log(userInfo)
-        setUserInfo(userInfo)
       }
     
     return (
